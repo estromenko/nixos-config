@@ -13,7 +13,7 @@
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-classic;
     nixosConfigurations.estromenko = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
-      modules = [ ./configuration.nix ];
+      modules = [ ./configuration.nix ./hardware-configuration.nix ];
     };
   };
 }
