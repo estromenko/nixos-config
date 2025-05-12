@@ -1,9 +1,6 @@
-{ config, pkgs, lib, inputs, ... }:
-{
-  imports = [
-    ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
-  ];
+{ config, pkgs, lib, inputs, ... }: {
+  imports =
+    [ ./hardware-configuration.nix inputs.home-manager.nixosModules.default ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -73,9 +70,7 @@
     rio
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.hack
-  ];
+  fonts.packages = with pkgs; [ nerd-fonts.hack ];
 
   virtualisation.docker.enable = true;
 
@@ -88,12 +83,12 @@
     isNormalUser = true;
     description = "estromenko";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
     shell = pkgs.fish;
   };
 
   home-manager.users.estromenko = { pkgs, ... }: {
-    home.packages = with pkgs; [];
+    home.packages = with pkgs; [ ];
     services.mako.enable = true;
     programs.git = {
       enable = true;
