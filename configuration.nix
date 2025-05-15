@@ -103,6 +103,8 @@
       opacity = 0.9
     '';
 
+    home.file.".config/niri/config.kdl".source = ./niri.kdl;
+
     programs.zed-editor = {
       enable = true;
       extensions = ["nix" "python" "dockerfile" "yaml"];
