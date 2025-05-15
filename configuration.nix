@@ -68,6 +68,7 @@
 
   programs.niri.enable = true;
   programs.amnezia-vpn.enable = true;
+  programs.nix-ld.enable = true;
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
