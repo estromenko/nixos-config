@@ -80,6 +80,9 @@
   home-manager.backupFileExtension = "backup";
 
   home-manager.users.estromenko = {pkgs, ...}: {
+    imports = [
+      inputs.ironbar.homeManagerModules.default
+    ];
     nixpkgs.config.allowUnfree = true;
 
     home.packages = with pkgs; [
@@ -120,6 +123,10 @@
       userEmail = "estromenko@mail.ru";
       userName = "estromenko";
       extraConfig.init.defaultBranch = "master";
+    };
+    programs.ironbar = {
+      enable = true;
+      systemd = true;
     };
     programs.starship = {
       enable = true;
