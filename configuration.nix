@@ -94,6 +94,7 @@
 
     home.packages = with pkgs; [
       networkmanagerapplet
+      pavucontrol
       pcmanfm
       vim
       zellij
