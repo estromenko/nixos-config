@@ -11,6 +11,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  services.gvfs.enable = true;
+
   networking.hostName = "estromenko";
   networking.networkmanager.enable = true;
 
@@ -90,6 +92,7 @@
     nixpkgs.config.allowUnfree = true;
 
     home.packages = with pkgs; [
+      pcmanfm
       vim
       zellij
       google-chrome
