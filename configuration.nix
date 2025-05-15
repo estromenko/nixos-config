@@ -1,7 +1,13 @@
-{ config, pkgs, lib, inputs, ... }: {
-  imports = [ inputs.home-manager.nixosModules.default ];
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
+  imports = [inputs.home-manager.nixosModules.default];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -52,13 +58,13 @@
     pulse.enable = true;
   };
 
-  services.xserver.excludePackages = [ pkgs.xterm ];
+  services.xserver.excludePackages = [pkgs.xterm];
   documentation.nixos.enable = false;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [];
 
-  fonts.packages = with pkgs; [ nerd-fonts.hack ];
+  fonts.packages = with pkgs; [nerd-fonts.hack];
 
   virtualisation.docker.enable = true;
 
@@ -70,14 +76,14 @@
   users.users.estromenko = {
     isNormalUser = true;
     description = "estromenko";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [ ];
+    extraGroups = ["networkmanager" "wheel" "docker"];
+    packages = with pkgs; [];
     shell = pkgs.fish;
   };
 
   home-manager.backupFileExtension = "backup";
 
-  home-manager.users.estromenko = { pkgs, ... }: {
+  home-manager.users.estromenko = {pkgs, ...}: {
     nixpkgs.config.allowUnfree = true;
 
     home.packages = with pkgs; [
