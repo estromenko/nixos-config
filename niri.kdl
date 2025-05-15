@@ -220,9 +220,9 @@ binds {
     Mod+Space       { switch-layout "next"; }
     Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Pause { screenshot; }
+    Ctrl+Pause { screenshot-screen; }
+    Alt+Pause { screenshot-window; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
