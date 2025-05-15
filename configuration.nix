@@ -65,7 +65,6 @@
   virtualisation.docker.enable = true;
 
   programs.niri.enable = true;
-  programs.waybar.enable = true;
   programs.amnezia-vpn.enable = true;
   programs.fish = {
     enable = true;
