@@ -52,22 +52,11 @@
     pulse.enable = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   services.xserver.excludePackages = [ pkgs.xterm ];
   documentation.nixos.enable = false;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.systemPackages = with pkgs; [
-    vim
-    zellij
-    google-chrome
-    telegram-desktop
-    fuzzel
-    ripgrep
-    neovim
-    rio
-  ];
+  environment.systemPackages = with pkgs; [];
 
   fonts.packages = with pkgs; [ nerd-fonts.hack ];
 
@@ -86,16 +75,53 @@
     shell = pkgs.fish;
   };
 
+  home-manager.backupFileExtension = "backup";
+
   home-manager.users.estromenko = { pkgs, ... }: {
-    home.packages = with pkgs; [ ];
+    nixpkgs.config.allowUnfree = true;
+
+    home.packages = with pkgs; [
+      vim
+      zellij
+      google-chrome
+      telegram-desktop
+      fuzzel
+      rio
+      nodejs
+      nixd
+      nil
+    ];
     services.mako.enable = true;
+
+    home.file.".config/rio/config.toml".text = ''
+      [window]
+      mode = "maximized"
+      opacity = 0.9
+    '';
+
+    programs.zed-editor = {
+      enable = true;
+      extensions = ["nix" "python" "dockerfile" "yaml"];
+      userSettings = {
+        vim_mode = true;
+        telemetry = {
+          metrics = false;
+        };
+        theme = "One Dark";
+      };
+    };
     programs.git = {
       enable = true;
       userEmail = "estromenko@mail.ru";
       userName = "estromenko";
       extraConfig.init.defaultBranch = "master";
     };
-
+    programs.starship = {
+      enable = true;
+      settings = {
+        add_newline = false;
+      };
+    };
     home.stateVersion = "25.05";
   };
 
