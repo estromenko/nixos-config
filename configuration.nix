@@ -29,13 +29,9 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
   };
 
   # Bluetooth
@@ -60,7 +56,9 @@
   documentation.nixos.enable = false;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.systemPackages = [];
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite
+  ];
 
   fonts.packages = with pkgs; [nerd-fonts.hack];
 
@@ -89,6 +87,7 @@
       zellij
       google-chrome
       telegram-desktop
+      onlyoffice-bin
       fuzzel
       rio
       nodejs

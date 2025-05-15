@@ -1,3 +1,9 @@
+environment {
+    DISPLAY ":12"
+}
+
+spawn-at-startup "xwayland-satellite" ":12"
+
 input {
     keyboard {
         xkb {
