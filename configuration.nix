@@ -92,6 +92,7 @@
     nixpkgs.config.allowUnfree = true;
 
     home.packages = with pkgs; [
+      networkmanagerapplet
       pcmanfm
       vim
       zellij
