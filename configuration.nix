@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  lib,
   inputs,
   ...
 }: {
@@ -62,7 +60,7 @@
   documentation.nixos.enable = false;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = [];
 
   fonts.packages = with pkgs; [nerd-fonts.hack];
 
@@ -77,7 +75,7 @@
     isNormalUser = true;
     description = "estromenko";
     extraGroups = ["networkmanager" "wheel" "docker"];
-    packages = with pkgs; [];
+    packages = [];
     shell = pkgs.fish;
   };
 
