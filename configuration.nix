@@ -67,7 +67,12 @@
   programs.niri.enable = true;
   programs.waybar.enable = true;
   programs.amnezia-vpn.enable = true;
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      starship init fish | source
+    '';
+  };
 
   users.users.estromenko = {
     isNormalUser = true;
@@ -133,6 +138,7 @@
       settings = {
         add_newline = false;
       };
+      enableFishIntegration = true;
     };
     home.stateVersion = "25.05";
   };
