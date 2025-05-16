@@ -121,7 +121,7 @@
 
     programs.zed-editor = {
       enable = true;
-      extensions = ["nix" "python" "dockerfile" "yaml" "toml"];
+      extensions = ["nix" "python" "dockerfile" "yaml" "toml" "git-firefly"];
       userSettings = {
         vim_mode = true;
         telemetry = {
