@@ -139,6 +139,8 @@
     programs.ironbar = {
       enable = true;
       systemd = true;
+      config = import ./ironbar.nix;
+      style = builtins.readFile ./ironbar.css;
     };
     programs.starship = {
       enable = true;
