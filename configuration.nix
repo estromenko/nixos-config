@@ -111,8 +111,6 @@
       fuzzel
       rio
       nodejs
-      nixd
-      nil
     ];
     services.mako.enable = true;
 
@@ -148,6 +146,11 @@
       settings = {
         add_newline = false;
       };
+      enableFishIntegration = true;
+    };
+    programs.direnv = {
+      enable = true;
+      nix-direnv.enable = true;
       enableFishIntegration = true;
     };
     programs.niri.settings = import ./niri.nix {config = config;};
