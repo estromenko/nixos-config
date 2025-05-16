@@ -110,7 +110,6 @@
       onlyoffice-bin
       fuzzel
       rio
-      nodejs
     ];
     services.mako.enable = true;
 
