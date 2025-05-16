@@ -3,7 +3,10 @@
   inputs,
   ...
 }: {
-  imports = [inputs.home-manager.nixosModules.default];
+  imports = [
+    inputs.home-manager.nixosModules.default
+    inputs.niri.nixosModules.niri
+  ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -86,7 +89,11 @@
 
   home-manager.backupFileExtension = "backup";
 
-  home-manager.users.estromenko = {pkgs, ...}: {
+  home-manager.users.estromenko = {
+    pkgs,
+    config,
+    ...
+  }: {
     imports = [
       inputs.ironbar.homeManagerModules.default
     ];
@@ -114,8 +121,6 @@
       mode = "maximized"
       opacity = 0.9
     '';
-
-    home.file.".config/niri/config.kdl".source = ./niri.kdl;
 
     programs.zed-editor = {
       enable = true;
@@ -145,6 +150,7 @@
       };
       enableFishIntegration = true;
     };
+    programs.niri.settings = import ./niri.nix {config = config;};
     home.stateVersion = "25.05";
   };
 
