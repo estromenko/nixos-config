@@ -57,6 +57,8 @@
     pulse.enable = true;
   };
 
+  services.upower.enable = true;
+
   services.xserver.excludePackages = [pkgs.xterm];
   documentation.nixos.enable = false;
 

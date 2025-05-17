@@ -47,6 +47,8 @@
       icon_size = 32;
     }
 
+    {type = "upower";}
+
     {type = "notifications";}
 
     {
