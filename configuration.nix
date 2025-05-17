@@ -156,6 +156,13 @@
       nix-direnv.enable = true;
       enableFishIntegration = true;
     };
+
+    services.wpaperd = {
+      enable = true;
+      settings.any = {
+        path = ./assets/wallpaper.png;
+      };
+    };
     programs.niri.settings = import ./niri.nix {config = config;};
     home.stateVersion = "25.05";
   };
