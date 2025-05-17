@@ -104,6 +104,7 @@
     home.packages = with pkgs; [
       networkmanagerapplet
       pavucontrol
+      swaynotificationcenter
       pcmanfm
       vim
       zellij
@@ -113,7 +114,6 @@
       fuzzel
       rio
     ];
-    services.mako.enable = true;
 
     home.file.".config/rio/config.toml".text = ''
       [window]
