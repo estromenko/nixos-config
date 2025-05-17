@@ -23,6 +23,17 @@
     focus-follows-mouse.enable = true;
   };
 
+  window-rules = [
+    {
+      matches = [
+        {
+          is-active = false;
+        }
+      ];
+      opacity = 0.95;
+    }
+  ];
+
   outputs."eDP-1" = {
     scale = 1.0;
     mode = {
