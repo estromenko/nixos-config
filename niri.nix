@@ -20,6 +20,7 @@
     };
     tablet.map-to-output = "eDP-1";
     touch.map-to-output = "eDP-1";
+    focus-follows-mouse.enable = true;
   };
 
   outputs."eDP-1" = {
