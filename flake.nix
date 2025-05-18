@@ -25,7 +25,7 @@
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations.estromenko = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
-      modules = [./configuration.nix ./hardware-configuration.nix];
+      modules = [./hosts/estromenko/configuration.nix ./hosts/estromenko/hardware-configuration.nix];
     };
   };
 }

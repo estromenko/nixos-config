@@ -104,7 +104,7 @@
   home-manager.users.estromenko = {...}: {
     imports = [
       inputs.ironbar.homeManagerModules.default
-      ./home.nix
+      ./home-manager/home.nix
     ];
   };
 
