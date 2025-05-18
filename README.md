@@ -17,3 +17,19 @@ cd ~/nixos-config
 direnv allow
 zeditor .
 ```
+
+## Sound-related issues
+
+Use hdajackretask and configure proper input/output devices in GUI, for instance:
+
+```bash
+nix-shell -p alsa-tools --run hdajackretask
+```
+
+## L2TP-related issues
+
+For some reason creating empty strongswan config solves multiple l2tp problems.
+
+```bash
+sudo touch /etc/strongswan.conf
+```
