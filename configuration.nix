@@ -101,6 +101,8 @@
     ];
     nixpkgs.config.allowUnfree = true;
 
+    home.enableNixpkgsReleaseCheck = false;
+
     home.packages = with pkgs; [
       networkmanagerapplet
       pavucontrol
