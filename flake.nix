@@ -23,20 +23,24 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
   in {
-    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
+    formatter.${system} = pkgs.alejandra;
     nixosConfigurations.estromenko = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [./hosts/estromenko/configuration.nix ./hosts/estromenko/hardware-configuration.nix];
     };
     homeConfigurations.estromenko = inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+      inherit pkgs;
       modules = [
         inputs.ironbar.homeManagerModules.default
         inputs.niri.homeModules.niri
         ./hosts/estromenko/home-manager/home.nix
       ];
       extraSpecialArgs = {inherit inputs;};
+    };
+    devShells.${system}.default = pkgs.mkShell {
+      packages = with pkgs; [nil];
     };
   };
 }
