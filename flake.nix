@@ -21,11 +21,22 @@
     self,
     nixpkgs,
     ...
-  } @ inputs: {
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+  } @ inputs: let
+    system = "x86_64-linux";
+  in {
+    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
     nixosConfigurations.estromenko = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [./hosts/estromenko/configuration.nix ./hosts/estromenko/hardware-configuration.nix];
+    };
+    homeConfigurations.estromenko = inputs.home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${system};
+      modules = [
+        inputs.ironbar.homeManagerModules.default
+        inputs.niri.homeModules.niri
+        ./hosts/estromenko/home-manager/home.nix
+      ];
+      extraSpecialArgs = {inherit inputs;};
     };
   };
 }

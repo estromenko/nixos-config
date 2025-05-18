@@ -5,7 +5,6 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.default
-    inputs.niri.nixosModules.niri
   ];
 
   nix = {
@@ -104,6 +103,7 @@
   home-manager.users.estromenko = {...}: {
     imports = [
       inputs.ironbar.homeManagerModules.default
+      inputs.niri.homeModules.niri
       ./home-manager/home.nix
     ];
   };

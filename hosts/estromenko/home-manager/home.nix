@@ -7,6 +7,9 @@
 
   home.enableNixpkgsReleaseCheck = false;
 
+  home.username = "estromenko";
+  home.homeDirectory = "/home/estromenko";
+
   home.packages = with pkgs; [
     networkmanagerapplet
     pavucontrol
