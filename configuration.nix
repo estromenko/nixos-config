@@ -8,7 +8,17 @@
     inputs.niri.nixosModules.niri
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      auto-optimise-store = true;
+    };
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
