@@ -17,19 +17,6 @@
       truncate.max_length = 40;
     }
   ];
-  center = [
-    {
-      type = "sys_info";
-      interval.memory = 30;
-      interval.cpu = 1;
-
-      format = [
-        " {cpu_percent}%"
-        " {memory_percent}%"
-        " {temp_c:coretemp-Package-id-0}°C"
-      ];
-    }
-  ];
   end = [
     {
       type = "tray";
@@ -40,11 +27,6 @@
       type = "volume";
       on_scroll_down = "wpctl set-volume @DEFAULT_SINK@ 3%-";
       on_scroll_up = "wpctl set-volume @DEFAULT_SINK@ 3%+ --limit 100";
-    }
-
-    {
-      type = "network_manager";
-      icon_size = 32;
     }
 
     {type = "upower";}
@@ -103,13 +85,13 @@
             {
               type = "label";
               name = "uptime";
-              label = "Uptime: {{30000:uptime -p | cut -d ' ' -f2-}}";
+              label = "Uptime: {{30000:uptime | cut -d ' ' -f2}}";
             }
           ];
         }
       ];
 
-      tooltip = "Up: {{30000:uptime -p | cut -d ' ' -f2-}}";
+      tooltip = "Up: {{30000:uptime | cut -d ' ' -f2}}";
     }
   ];
 }
