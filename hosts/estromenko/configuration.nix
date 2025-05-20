@@ -86,6 +86,7 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
+      export TERM=xterm-256color
       starship init fish | source
     '';
   };
