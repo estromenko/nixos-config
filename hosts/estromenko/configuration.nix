@@ -19,6 +19,8 @@
     };
   };
 
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -80,7 +82,10 @@
 
   virtualisation.docker.enable = true;
 
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-unstable;
+  };
   programs.amnezia-vpn.enable = true;
   programs.nix-ld.enable = true;
   programs.fish = {
