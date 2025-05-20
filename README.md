@@ -23,7 +23,7 @@ zeditor .
 Use hdajackretask and configure proper input/output devices in GUI, for instance:
 
 ```bash
-nix-shell -p alsa-tools --run hdajackretask
+sudo -E hdajackretask
 ```
 
 ## L2TP-related issues

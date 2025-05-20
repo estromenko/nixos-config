@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     networkmanagerapplet
     pavucontrol
+    alsa-tools
     swaynotificationcenter
     pcmanfm
     vim
