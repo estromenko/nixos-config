@@ -25,11 +25,7 @@
     rio
   ];
 
-  home.file.".config/rio/config.toml".text = ''
-    [window]
-    mode = "maximized"
-    opacity = 0.9
-  '';
+  home.file.".config/rio/config.toml".source = ./assets/rio-config.toml;
 
   programs.zed-editor = {
     enable = true;
