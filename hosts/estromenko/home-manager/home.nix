@@ -52,7 +52,7 @@
     enable = true;
     systemd = true;
     config = import ./ironbar.nix;
-    style = builtins.readFile ./ironbar.css;
+    style = builtins.readFile ./assets/ironbar.css;
   };
   programs.starship = {
     enable = true;
