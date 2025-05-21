@@ -22,7 +22,8 @@
     networkmanagerapplet
     pavucontrol
     swaynotificationcenter
-    pcmanfm
+    cosmic-files
+    cosmic-settings
     vim
     zellij
     google-chrome
