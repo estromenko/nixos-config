@@ -20,7 +20,7 @@
     };
     tablet.map-to-output = "eDP-1";
     touch.map-to-output = "eDP-1";
-    focus-follows-mouse.enable = true;
+    focus-follows-mouse.enable = false;
   };
 
   window-rules = [
@@ -39,29 +39,23 @@
     mode = {
       width = 1920;
       height = 1080;
-      refresh = 120.030;
+      refresh = 60.0;
     };
     position = {
       x = 1280;
-      y = 0;
+      y = 720;
     };
   };
 
   layout = {
-    focus-ring = {
-      width = 4;
-      active.color = "#7fc8ff";
-      inactive.color = "#505050";
-    };
+    focus-ring.enable = false;
     border.enable = false;
     preset-column-widths = [
-      {proportion = 1.0 / 3.0;}
-      {proportion = 1.0 / 2.0;}
-      {proportion = 2.0 / 3.0;}
+      {proportion = 19.0 / 2.0;}
     ];
-    default-column-width.proportion = 0.5;
+    default-column-width.proportion = 19.0 / 20.0;
     gaps = 16;
-    center-focused-column = "never";
+    center-focused-column = "always";
   };
 
   screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
