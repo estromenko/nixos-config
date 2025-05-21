@@ -19,7 +19,7 @@
     };
   };
 
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  nixpkgs.overlays = [inputs.niri.overlays.niri];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
