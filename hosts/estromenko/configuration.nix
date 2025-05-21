@@ -45,10 +45,7 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  services.displayManager.cosmic-greeter.enable = true;
 
   # Bluetooth
   hardware.bluetooth.enable = true;
