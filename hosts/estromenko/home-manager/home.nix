@@ -10,6 +10,14 @@
   home.username = "estromenko";
   home.homeDirectory = "/home/estromenko";
 
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
+
   home.packages = with pkgs; [
     networkmanagerapplet
     pavucontrol
