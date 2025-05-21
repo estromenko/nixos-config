@@ -10,20 +10,7 @@
   home.username = "estromenko";
   home.homeDirectory = "/home/estromenko";
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-  };
-
   home.packages = with pkgs; [
-    networkmanagerapplet
-    pavucontrol
-    swaynotificationcenter
-    cosmic-files
-    cosmic-settings
     vim
     zellij
     google-chrome
@@ -52,12 +39,6 @@
     userName = "estromenko";
     extraConfig.init.defaultBranch = "master";
   };
-  programs.ironbar = {
-    enable = true;
-    systemd = true;
-    config = import ./ironbar.nix;
-    style = builtins.readFile ./assets/ironbar.css;
-  };
   programs.starship = {
     enable = true;
     settings = {
@@ -78,5 +59,16 @@
     };
   };
   programs.niri.settings = import ./niri.nix {config = config;};
+
+  systemd.user.services.cosmic-panel = {
+    Install.WantedBy = ["default.target"];
+    Service = {
+      ExecStart = "${pkgs.cosmic-panel}/bin/cosmic-panel";
+      ExecStop = "kill cosmic-panel";
+      Restart = "always";
+      RestartSec = 1;
+    };
+  };
+
   home.stateVersion = "25.05";
 }
