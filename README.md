@@ -17,11 +17,3 @@ cd ~/nixos-config
 direnv allow
 zeditor .
 ```
-
-## L2TP-related issues
-
-For some reason creating empty strongswan config solves multiple l2tp problems.
-
-```bash
-sudo touch /etc/strongswan.conf
-```

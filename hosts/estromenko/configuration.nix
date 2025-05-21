@@ -78,6 +78,11 @@
     xwayland-satellite
   ];
 
+  # Fix for L2TP VPN connection
+  environment.etc = {
+    "strongswan.conf".text = "";
+  };
+
   fonts.packages = with pkgs; [nerd-fonts.hack];
 
   virtualisation.docker.enable = true;
