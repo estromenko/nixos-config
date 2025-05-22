@@ -45,7 +45,10 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
-  services.desktopManager.cosmic.enable = true;
+  services.desktopManager.cosmic = {
+    enable = true;
+    xwayland.enable = false;
+  };
   services.displayManager.cosmic-greeter.enable = true;
   services.displayManager.sessionPackages = [
     ((pkgs.writeTextFile {
