@@ -45,12 +45,25 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
+  services.desktopManager.cosmic.enable = true;
   services.displayManager.cosmic-greeter.enable = true;
+  services.displayManager.sessionPackages = [
+    ((pkgs.writeTextFile {
+      name = "cosmic-niri";
+      destination = "/share/wayland-sessions/cosmic-niri.desktop";
+      text = ''
+        [Desktop Entry]
+        Name=Cosmic Niri
+        Exec=cosmic-session niri-session
+        Type=Application
+        DesktopNames=cosmic-niri
+      '';
+    }).overrideAttrs (old: {passthru.providedSessions = ["cosmic-niri"];}))
+  ];
 
   # Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = false;
@@ -64,8 +77,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  services.upower.enable = true;
 
   services.xserver.excludePackages = [pkgs.xterm];
   documentation.nixos.enable = false;
@@ -110,7 +121,6 @@
 
   home-manager.users.estromenko = {...}: {
     imports = [
-      inputs.ironbar.homeManagerModules.default
       inputs.niri.homeModules.niri
       ./home-manager/home.nix
     ];

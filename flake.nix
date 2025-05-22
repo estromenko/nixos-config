@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ironbar.url = "github:JakeStanger/ironbar";
     niri.url = "github:sodiboo/niri-flake";
   };
 
@@ -27,7 +26,6 @@
     homeConfigurations.estromenko = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        inputs.ironbar.homeManagerModules.default
         inputs.niri.homeModules.niri
         ./hosts/estromenko/home-manager/home.nix
       ];
