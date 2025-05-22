@@ -83,6 +83,7 @@
 
   services.xserver.excludePackages = [pkgs.xterm];
   documentation.nixos.enable = false;
+  documentation.man.generateCaches = false;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [
