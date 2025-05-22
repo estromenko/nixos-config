@@ -25,11 +25,7 @@
     google-chrome
     telegram-desktop
     onlyoffice-bin
-    fuzzel
-    rio
   ];
-
-  home.file.".config/rio/config.toml".source = ./assets/rio-config.toml;
 
   programs.zed-editor = {
     enable = true;

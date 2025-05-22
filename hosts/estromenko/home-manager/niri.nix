@@ -58,8 +58,8 @@
 
   binds = with config.lib.niri.actions; {
     "Mod+Shift+Slash".action = show-hotkey-overlay;
-    "Mod+T".action.spawn = "rio";
-    "Mod+D".action.spawn = "fuzzel";
+    "Mod+T".action.spawn = "cosmic-term";
+    "Mod+D".action.spawn = "cosmic-launcher";
     "Super+Alt+L".action.spawn = "swaylock";
     "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
