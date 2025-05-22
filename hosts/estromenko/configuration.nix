@@ -109,6 +109,7 @@
     enable = true;
     interactiveShellInit = ''
       export TERM=xterm-256color
+      export EDITOR=vim
       starship init fish | source
     '';
   };
