@@ -24,6 +24,8 @@
   };
 
   home.packages = with pkgs; [
+    xwayland-satellite
+    (lib.hiPrio uutils-coreutils-noprefix)
     networkmanagerapplet
     vim
     zellij
