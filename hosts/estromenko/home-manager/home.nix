@@ -10,6 +10,11 @@
   home.username = "estromenko";
   home.homeDirectory = "/home/estromenko";
 
+  home.sessionVariables = {
+    EDITOR = "vim";
+    TERM = "xterm-256color";
+  };
+
   gtk = {
     enable = true;
     theme = {
@@ -45,17 +50,16 @@
     userName = "estromenko";
     extraConfig.init.defaultBranch = "master";
   };
+  programs.fish.enable = true;
   programs.starship = {
     enable = true;
     settings = {
       add_newline = false;
     };
-    enableFishIntegration = true;
   };
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
-    enableFishIntegration = true;
   };
 
   services.wpaperd = {

@@ -106,21 +106,11 @@
   };
   programs.amnezia-vpn.enable = true;
   programs.nix-ld.enable = true;
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      export TERM=xterm-256color
-      export EDITOR=vim
-      starship init fish | source
-    '';
-  };
 
   users.users.estromenko = {
     isNormalUser = true;
     description = "estromenko";
     extraGroups = ["networkmanager" "wheel" "docker"];
-    packages = [];
-    shell = pkgs.fish;
   };
 
   home-manager.backupFileExtension = "backup";
