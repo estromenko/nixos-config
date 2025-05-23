@@ -88,6 +88,7 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [
     xwayland-satellite
+    (lib.hiPrio uutils-coreutils-noprefix)
   ];
 
   # Fix for L2TP VPN connection
