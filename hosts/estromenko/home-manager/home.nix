@@ -36,6 +36,7 @@
         metrics = false;
       };
       theme = "One Dark";
+      format_on_save = "off";
     };
   };
   programs.git = {
