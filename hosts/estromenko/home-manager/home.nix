@@ -72,25 +72,5 @@
   };
   programs.niri.settings = import ./niri.nix {config = config;};
 
-  systemd.user.services.cosmic-panel = {
-    Install.WantedBy = ["default.target"];
-    Service = {
-      ExecStart = "${pkgs.cosmic-panel}/bin/cosmic-panel";
-      ExecStop = "kill cosmic-panel";
-      Restart = "always";
-      RestartSec = 1;
-    };
-  };
-
-  systemd.user.services.cosmic-notifications = {
-    Install.WantedBy = ["default.target"];
-    Service = {
-      ExecStart = "${pkgs.cosmic-notifications}/bin/cosmic-notifications";
-      ExecStop = "kill cosmic-notifications";
-      Restart = "always";
-      RestartSec = 1;
-    };
-  };
-
   home.stateVersion = "25.05";
 }

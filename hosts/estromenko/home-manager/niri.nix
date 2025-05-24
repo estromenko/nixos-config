@@ -1,8 +1,8 @@
 {config, ...}: {
   spawn-at-startup = [
-    {
-      command = ["xwayland-satellite" ":12"];
-    }
+    {command = ["xwayland-satellite" ":12"];}
+    {command = ["cosmic-panel"];}
+    {command = ["cosmic-notifications"];}
   ];
 
   environment = {
