@@ -32,7 +32,14 @@
     google-chrome
     telegram-desktop
     onlyoffice-bin
+    cosmic-files
+    cosmic-notifications
+    fuzzel
+    rio
+    libnotify
   ];
+
+  home.file.".config/rio/config.toml".source = ./assets/rio.toml;
 
   programs.zed-editor = {
     enable = true;
