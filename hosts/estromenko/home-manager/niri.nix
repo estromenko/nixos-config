@@ -64,12 +64,12 @@
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
     "Mod+Q".action = close-window;
     "Mod+Left".action = focus-column-left;
-    "Mod+Down".action = focus-window-down;
-    "Mod+Up".action = focus-window-up;
+    "Mod+Down".action = focus-window-or-workspace-down;
+    "Mod+Up".action = focus-window-or-workspace-up;
     "Mod+Right".action = focus-column-right;
     "Mod+H".action = focus-column-left;
-    "Mod+J".action = focus-window-down;
-    "Mod+K".action = focus-window-up;
+    "Mod+J".action = focus-window-or-workspace-down;
+    "Mod+K".action = focus-window-or-workspace-up;
     "Mod+L".action = focus-column-right;
     "Mod+Ctrl+Left".action = move-column-left;
     "Mod+Ctrl+Down".action = move-window-down;
