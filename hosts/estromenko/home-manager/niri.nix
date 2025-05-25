@@ -45,11 +45,13 @@
     focus-ring.enable = false;
     border.enable = false;
     preset-column-widths = [
-      {proportion = 19.0 / 2.0;}
+      {proportion = 1.0 / 3.0;}
+      {proportion = 1.0 / 2.0;}
+      {proportion = 2.0 / 3.0;}
     ];
-    default-column-width.proportion = 19.0 / 20.0;
+    default-column-width.proportion = 0.5;
     gaps = 16;
-    center-focused-column = "always";
+    center-focused-column = "never";
   };
 
   screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";

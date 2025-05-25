@@ -34,6 +34,7 @@
     onlyoffice-bin
     cosmic-files
     cosmic-notifications
+    cosmic-settings
     fuzzel
     rio
     libnotify
