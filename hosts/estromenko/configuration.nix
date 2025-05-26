@@ -50,7 +50,6 @@
   # Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = false;
@@ -70,6 +69,8 @@
   documentation.man.generateCaches = false;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  services.upower.enable = true;
 
   # Fix for L2TP VPN connection
   environment.etc = {

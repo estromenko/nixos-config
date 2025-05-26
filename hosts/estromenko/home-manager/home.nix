@@ -35,9 +35,10 @@
     cosmic-files
     cosmic-notifications
     cosmic-settings
+    cosmic-applets
+    cosmic-panel
     fuzzel
     rio
-    libnotify
   ];
 
   home.file.".config/rio/config.toml".source = ./assets/rio.toml;

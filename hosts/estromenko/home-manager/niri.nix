@@ -2,6 +2,7 @@
   spawn-at-startup = [
     {command = ["xwayland-satellite" ":12"];}
     {command = ["cosmic-notifications"];}
+    {command = ["cosmic-panel"];}
   ];
 
   environment = {
@@ -61,6 +62,10 @@
     "Mod+Shift+Slash".action = show-hotkey-overlay;
     "Mod+T".action.spawn = "rio";
     "Mod+D".action.spawn = "fuzzel";
+    "Mod+B".action.spawn = "google-chrome-stable";
+    "Mod+S".action.spawn = "cosmic-settings";
+    "Mod+Shift+T".action.spawn = "telegram-desktop";
+    "Mod+Z".action.spawn = "zeditor";
     "Super+Alt+L".action.spawn = "swaylock";
     "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
@@ -147,13 +152,5 @@
     "Alt+Pause".action = screenshot-window;
     "Mod+Shift+E".action = quit;
     "Mod+Shift+P".action = power-off-monitors;
-    "Mod+Shift+D" = {
-      hotkey-overlay.title = "Get date and time";
-      action.spawn = ["sh" "-c" "notify-send -a niri 'Date and time' \"$(date)\""];
-    };
-    "Mod+Shift+B" = {
-      hotkey-overlay.title = "Get battery status";
-      action.spawn = ["sh" "-c" "notify-send -a niri 'Battery' \"$(cat /sys/class/power_supply/BAT0/capacity)\""];
-    };
   };
 }
