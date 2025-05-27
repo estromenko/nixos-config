@@ -81,5 +81,21 @@
   };
   programs.niri.settings = import ./niri.nix {config = config;};
 
+  xdg.portal = {
+    enable = true;
+    config.common.default = "*";
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-cosmic
+      xdg-desktop-portal-gtk
+    ];
+  };
+
+  home.pointerCursor = {
+    name = "phinger-cursors-dark";
+    package = pkgs.phinger-cursors;
+    size = 32;
+    gtk.enable = true;
+  };
+
   home.stateVersion = "25.05";
 }
