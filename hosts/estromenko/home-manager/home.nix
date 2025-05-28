@@ -39,6 +39,7 @@
     cosmic-panel
     fuzzel
     rio
+    bottom
   ];
 
   home.file.".config/rio/config.toml".source = ./assets/rio.toml;
