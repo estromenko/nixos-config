@@ -32,7 +32,7 @@
       extraSpecialArgs = {inherit inputs;};
     };
     devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [nil];
+      packages = with pkgs; [nil nixd];
     };
   };
 }
