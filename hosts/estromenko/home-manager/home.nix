@@ -22,7 +22,6 @@
     cosmic-panel
     zellij
     bottom
-    yazi
   ];
 
   programs.zed-editor = {
@@ -68,6 +67,16 @@
     enable = true;
     defaultEditor = true;
     settings.theme = "gruvbox";
+  };
+
+  programs.yazi = {
+    enable = true;
+    settings = {
+      manager = {
+        show_hidden = true;
+        show_symlink = true;
+      };
+    };
   };
 
   programs.zoxide.enable = true;
