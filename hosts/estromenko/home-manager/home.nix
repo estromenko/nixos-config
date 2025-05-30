@@ -10,18 +10,9 @@
   home.username = "estromenko";
   home.homeDirectory = "/home/estromenko";
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-  };
-
   home.packages = with pkgs; [
     xwayland-satellite
     (lib.hiPrio uutils-coreutils-noprefix)
-    networkmanagerapplet
     google-chrome
     telegram-desktop
     onlyoffice-bin
@@ -30,7 +21,6 @@
     cosmic-applets
     cosmic-panel
     zellij
-    fuzzel
     bottom
     yazi
   ];
@@ -94,7 +84,6 @@
     enable = true;
     config.common.default = "*";
     extraPortals = with pkgs; [
-      xdg-desktop-portal-cosmic
       xdg-desktop-portal-gtk
     ];
   };
