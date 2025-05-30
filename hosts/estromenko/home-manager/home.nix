@@ -10,11 +10,6 @@
   home.username = "estromenko";
   home.homeDirectory = "/home/estromenko";
 
-  home.sessionVariables = {
-    EDITOR = "vim";
-    TERM = "xterm-256color";
-  };
-
   gtk = {
     enable = true;
     theme = {
@@ -27,22 +22,18 @@
     xwayland-satellite
     (lib.hiPrio uutils-coreutils-noprefix)
     networkmanagerapplet
-    vim
-    zellij
     google-chrome
     telegram-desktop
     onlyoffice-bin
-    cosmic-files
     cosmic-notifications
     cosmic-settings
     cosmic-applets
     cosmic-panel
+    zellij
     fuzzel
-    rio
     bottom
+    yazi
   ];
-
-  home.file.".config/rio/config.toml".source = ./assets/rio.toml;
 
   programs.zed-editor = {
     enable = true;
@@ -80,7 +71,24 @@
       path = ./assets/wallpaper.png;
     };
   };
+
   programs.niri.settings = import ./niri.nix {config = config;};
+
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+    settings.theme = "gruvbox";
+  };
+
+  programs.zoxide.enable = true;
+
+  programs.rio = {
+    enable = true;
+    settings = {
+      window.decorations = "Disabled";
+      env-vars = ["TERM=xterm-256color"];
+    };
+  };
 
   xdg.portal = {
     enable = true;
