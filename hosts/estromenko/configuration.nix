@@ -68,8 +68,6 @@
   documentation.nixos.enable = false;
   documentation.man.generateCaches = false;
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
   services.upower.enable = true;
 
   # Fix for L2TP VPN connection

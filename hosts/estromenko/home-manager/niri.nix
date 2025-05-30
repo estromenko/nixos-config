@@ -7,6 +7,7 @@
 
   environment = {
     DISPLAY = ":12";
+    NIXOS_OZONE_WL = "1";
   };
 
   input = {
