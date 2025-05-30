@@ -75,8 +75,6 @@
     "strongswan.conf".text = "";
   };
 
-  fonts.packages = with pkgs; [nerd-fonts.hack];
-
   virtualisation.docker.enable = true;
 
   programs.niri.enable = true;
