@@ -81,10 +81,7 @@
 
   virtualisation.docker.enable = true;
 
-  programs.niri = {
-    enable = true;
-    package = pkgs.niri-unstable;
-  };
+  programs.niri.enable = true;
   programs.amnezia-vpn.enable = true;
   programs.nix-ld.enable = true;
 
