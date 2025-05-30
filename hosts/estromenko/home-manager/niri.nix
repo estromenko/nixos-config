@@ -65,6 +65,7 @@
     "Mod+B".action.spawn = "google-chrome-stable";
     "Mod+O".action.spawn = "onlyoffice-desktopeditors";
     "Mod+Y".action.spawn = ["rio" "-e" "fish" "-c" "yazi"];
+    "Mod+Shift+B".action.spawn = ["rio" "-e" "btm" "-b"];
     "Mod+S".action.spawn = "cosmic-settings";
     "Mod+Shift+T".action.spawn = "telegram-desktop";
     "Mod+Z".action.spawn = "zeditor";
