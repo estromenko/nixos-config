@@ -21,12 +21,18 @@
     };
     tablet.map-to-output = "eDP-1";
     touch.map-to-output = "eDP-1";
-    focus-follows-mouse.enable = false;
+    focus-follows-mouse.enable = true;
   };
 
   window-rules = [
     {
       opacity = 0.95;
+      draw-border-with-background = false;
+      clip-to-geometry = true;
+      geometry-corner-radius.bottom-left = 15.0;
+      geometry-corner-radius.bottom-right = 15.0;
+      geometry-corner-radius.top-left = 15.0;
+      geometry-corner-radius.top-right = 15.0;
     }
   ];
 
@@ -45,7 +51,16 @@
 
   layout = {
     focus-ring.enable = false;
-    border.enable = false;
+    border = {
+      enable = true;
+      width = 2;
+      active.gradient = {
+        from = "red";
+        to = "orange";
+        angle = 45;
+        in' = "oklch longer hue";
+      };
+    };
     preset-column-widths = [
       {proportion = 1.0 / 3.0;}
       {proportion = 1.0 / 2.0;}
