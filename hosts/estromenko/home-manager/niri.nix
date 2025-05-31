@@ -79,6 +79,7 @@
     "Mod+T".action.spawn = "rio";
     "Mod+B".action.spawn = "google-chrome-stable";
     "Mod+O".action.spawn = "onlyoffice-desktopeditors";
+    "Mod+V".action.spawn = "AmneziaVPN";
     "Mod+Y" = {
       hotkey-overlay.title = "Spawn yazi";
       action.spawn = ["rio" "-e" "fish" "-c" "yazi"];
