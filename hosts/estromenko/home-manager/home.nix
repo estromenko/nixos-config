@@ -42,7 +42,12 @@
     userName = "estromenko";
     extraConfig.init.defaultBranch = "master";
   };
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting
+    '';
+  };
   programs.starship = {
     enable = true;
     settings = {
@@ -52,6 +57,7 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+    silent = true;
   };
 
   services.wpaperd = {
