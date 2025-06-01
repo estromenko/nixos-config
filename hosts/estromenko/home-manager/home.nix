@@ -109,6 +109,7 @@
     settings = {
       window.decorations = "Disabled";
       env-vars = ["TERM=xterm-256color"];
+      confirm-before-quit = false;
     };
   };
 
