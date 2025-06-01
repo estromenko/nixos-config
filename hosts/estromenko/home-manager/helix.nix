@@ -32,6 +32,12 @@
         language-servers = ["nil" "nixd"];
         file-types = ["nix"];
       }
+      {
+        name = "typst";
+        language-servers = ["tinymist"];
+        file-types = ["typ"];
+        comment-token = "//";
+      }
     ];
     language-server = {
       rust-analyzer = {
@@ -52,6 +58,9 @@
       };
       nixd = {
         command = "${pkgs.nixd}/bin/nixd";
+      };
+      tinymist = {
+        command = "${pkgs.tinymist}/bin/tinymist";
       };
     };
   };
