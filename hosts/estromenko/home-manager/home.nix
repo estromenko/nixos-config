@@ -10,6 +10,13 @@
   home.username = "estromenko";
   home.homeDirectory = "/home/estromenko";
 
+  home.pointerCursor = {
+    name = "phinger-cursors-dark";
+    package = pkgs.phinger-cursors;
+    size = 32;
+    gtk.enable = true;
+  };
+
   home.packages = with pkgs; [
     xwayland-satellite
     (lib.hiPrio uutils-coreutils-noprefix)
@@ -46,24 +53,28 @@
       format_on_save = "off";
     };
   };
+
   programs.git = {
     enable = true;
     userEmail = "estromenko@mail.ru";
     userName = "estromenko";
     extraConfig.init.defaultBranch = "master";
   };
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
       set fish_greeting
     '';
   };
+
   programs.starship = {
     enable = true;
     settings = {
       add_newline = false;
     };
   };
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
@@ -107,13 +118,6 @@
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
     ];
-  };
-
-  home.pointerCursor = {
-    name = "phinger-cursors-dark";
-    package = pkgs.phinger-cursors;
-    size = 32;
-    gtk.enable = true;
   };
 
   home.stateVersion = "25.05";
