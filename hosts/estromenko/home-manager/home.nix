@@ -20,9 +20,15 @@
     cosmic-settings
     cosmic-applets
     cosmic-panel
-    zellij
     bottom
   ];
+
+  programs.zellij = {
+    enable = true;
+    attachExistingSession = true;
+    enableFishIntegration = true;
+    exitShellOnExit = true;
+  };
 
   programs.zed-editor = {
     enable = true;
