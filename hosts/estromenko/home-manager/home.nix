@@ -28,6 +28,10 @@
     attachExistingSession = true;
     enableFishIntegration = true;
     exitShellOnExit = true;
+    settings = {
+      pane_frames = false;
+      show_startup_tips = false;
+    };
   };
 
   programs.zed-editor = {
