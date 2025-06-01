@@ -27,6 +27,11 @@
         comment-token = "#";
         shebangs = ["python" "python3"];
       }
+      {
+        name = "nix";
+        language-servers = ["nil" "nixd"];
+        file-types = ["nix"];
+      }
     ];
     language-server = {
       rust-analyzer = {
@@ -41,6 +46,12 @@
       };
       pyright = {
         command = "${pkgs.pyright}/bin/pyright-langserver";
+      };
+      nil = {
+        command = "${pkgs.nil}/bin/nil";
+      };
+      nixd = {
+        command = "${pkgs.nixd}/bin/nixd";
       };
     };
   };
