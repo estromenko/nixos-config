@@ -25,6 +25,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  services.earlyoom.enable = true;
+
   services.gvfs.enable = true;
 
   networking.hostName = "estromenko";
