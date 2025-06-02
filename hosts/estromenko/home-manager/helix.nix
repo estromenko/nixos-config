@@ -5,7 +5,7 @@
     cargo
   ];
   settings = {
-    keys.normal.space.e = "file_picker_in_current_buffer_directory";
+    keys.normal.space.e = "@:cd <C-r>%<C-w><ret>";
     theme = "tokyonight";
   };
   languages = {
