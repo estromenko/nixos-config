@@ -21,7 +21,7 @@
       }
       {
         name = "python";
-        language-servers = ["ty" "pyright"];
+        language-servers = ["ty" "ruff" "pyright"];
         file-types = ["py"];
         roots = ["pyproject.toml" "setup.py" "Poetry.lock" ".git" ".venv"];
         comment-token = "#";
@@ -52,6 +52,10 @@
       };
       pyright = {
         command = "${pkgs.pyright}/bin/pyright-langserver";
+      };
+      ruff = {
+        command = "${pkgs.ruff}/bin/ruff";
+        args = ["server"];
       };
       nil = {
         command = "${pkgs.nil}/bin/nil";
