@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   enable = true;
+  package = pkgs.evil-helix;
   defaultEditor = true;
   extraPackages = with pkgs; [
     cargo
