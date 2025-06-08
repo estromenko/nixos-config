@@ -71,6 +71,7 @@
   documentation.man.generateCaches = false;
 
   services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   # Fix for L2TP VPN connection
   environment.etc = {
