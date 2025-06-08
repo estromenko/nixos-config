@@ -27,8 +27,17 @@
     cosmic-settings
     cosmic-applets
     cosmic-panel
+    networkmanagerapplet
     bottom
   ];
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
 
   programs.zellij = {
     enable = true;
