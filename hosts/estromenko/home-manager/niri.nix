@@ -1,12 +1,11 @@
 {config, ...}: {
+  prefer-no-csd = true;
+
   spawn-at-startup = [
-    {command = ["xwayland-satellite" ":12"];}
-    {command = ["cosmic-notifications"];}
     {command = ["cosmic-panel"];}
   ];
 
   environment = {
-    DISPLAY = ":12";
     NIXOS_OZONE_WL = "1";
   };
 
@@ -78,7 +77,6 @@
     "Mod+Shift+Slash".action = show-hotkey-overlay;
     "Mod+T".action.spawn = "rio";
     "Mod+B".action.spawn = "google-chrome-stable";
-    "Mod+O".action.spawn = "onlyoffice-desktopeditors";
     "Mod+V".action.spawn = "AmneziaVPN";
     "Mod+Y" = {
       hotkey-overlay.title = "Spawn yazi";
@@ -88,9 +86,7 @@
       hotkey-overlay.title = "Spawn bottom";
       action.spawn = ["rio" "-e" "btm" "-b"];
     };
-    "Mod+S".action.spawn = "cosmic-settings";
     "Mod+Shift+T".action.spawn = "telegram-desktop";
-    "Mod+Z".action.spawn = "zeditor";
     "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
     "Mod+Q".action = close-window;

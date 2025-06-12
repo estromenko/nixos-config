@@ -6,7 +6,10 @@
     cargo
   ];
   settings = {
-    keys.normal.space.e = "@:cd <C-r>%<C-w><ret>";
+    keys.normal = {
+      space.e = "@:cd <C-r>%<C-w><ret>";
+      V = ["extend_line_below" "select_mode"];
+    };
     theme = "tokyonight";
   };
   languages = {

@@ -14,30 +14,18 @@
     name = "phinger-cursors-dark";
     package = pkgs.phinger-cursors;
     size = 32;
-    gtk.enable = true;
   };
 
   home.packages = with pkgs; [
-    xwayland-satellite
-    (lib.hiPrio uutils-coreutils-noprefix)
     google-chrome
     telegram-desktop
-    onlyoffice-bin
-    cosmic-notifications
-    cosmic-settings
+    nautilus
     cosmic-applets
     cosmic-panel
-    networkmanagerapplet
     bottom
   ];
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-  };
+  services.swaync.enable = true;
 
   programs.zellij = {
     enable = true;
@@ -47,19 +35,6 @@
     settings = {
       pane_frames = false;
       show_startup_tips = false;
-    };
-  };
-
-  programs.zed-editor = {
-    enable = true;
-    extensions = ["nix" "python" "dockerfile" "yaml" "toml" "git-firefly"];
-    userSettings = {
-      vim_mode = true;
-      telemetry = {
-        metrics = false;
-      };
-      theme = "One Dark";
-      format_on_save = "off";
     };
   };
 
@@ -117,19 +92,9 @@
   programs.rio = {
     enable = true;
     settings = {
-      window.decorations = "Disabled";
       env-vars = ["TERM=xterm-256color"];
       confirm-before-quit = false;
     };
-  };
-
-  xdg.portal = {
-    enable = true;
-    config.common.default = ["gnome" "gtk"];
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-gnome
-    ];
   };
 
   home.stateVersion = "25.05";
