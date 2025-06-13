@@ -29,6 +29,12 @@
 
   services.gvfs.enable = true;
 
+  services.thermald = {
+    enable = true;
+    ignoreCpuidCheck = true;
+  };
+  services.tlp.enable = true;
+
   networking.hostName = "estromenko";
   networking.networkmanager.enable = true;
 
