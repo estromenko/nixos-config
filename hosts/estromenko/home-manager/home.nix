@@ -19,7 +19,6 @@
   home.packages = with pkgs; [
     google-chrome
     telegram-desktop
-    nautilus
     cosmic-applets
     cosmic-panel
     bottom
@@ -96,6 +95,25 @@
       confirm-before-quit = false;
     };
   };
+
+  xdg.portal = {
+    enable = true;
+    config.common = {
+      default = ["gnome"];
+      "org.freedesktop.impl.portal.FileChooser" = ["termfilechooser"];
+    };
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-termfilechooser
+    ];
+  };
+
+  xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
+    [filechooser]
+    env=TERMCMD="rio -e"
+    cmd=${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
+    default_dir=$HOME/Downloads
+  '';
 
   home.stateVersion = "25.05";
 }

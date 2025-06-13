@@ -89,6 +89,10 @@
     extraGroups = ["networkmanager" "wheel" "docker"];
   };
 
+  # niri-flake adds it on nixos level,
+  # but I wish to configure it on home-manager level
+  xdg.portal.enable = false;
+
   home-manager.backupFileExtension = "backup";
 
   home-manager.users.estromenko = {...}: {
