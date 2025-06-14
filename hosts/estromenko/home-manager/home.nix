@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -74,7 +75,10 @@
 
   programs.niri.settings = import ./niri.nix {config = config;};
 
-  programs.helix = import ./helix.nix {pkgs = pkgs;};
+  programs.helix = import ./helix.nix {
+    pkgs = pkgs;
+    inputs = inputs;
+  };
 
   programs.yazi = {
     enable = true;

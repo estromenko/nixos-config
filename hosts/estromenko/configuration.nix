@@ -101,6 +101,7 @@
 
   home-manager.backupFileExtension = "backup";
 
+  home-manager.extraSpecialArgs = {inherit inputs;};
   home-manager.users.estromenko = {...}: {
     imports = [
       inputs.niri.homeModules.niri
