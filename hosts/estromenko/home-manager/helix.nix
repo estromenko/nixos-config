@@ -1,6 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   enable = true;
-  package = pkgs.evil-helix;
+  package = inputs.helix.packages.${pkgs.system}.default;
   defaultEditor = true;
   extraPackages = with pkgs; [
     cargo
@@ -9,6 +13,16 @@
     keys.normal = {
       space.e = "@:cd <C-r>%<C-w><ret>";
       V = ["extend_line_below" "select_mode"];
+      C-y = [
+        ":sh rm -f /tmp/unique-file"
+        ":insert-output yazi \"%{buffer_name}\" --chooser-file=/tmp/unique-file"
+        ":insert-output echo \"\x1b[?1049h\x1b[?2004h\" > /dev/tty"
+        ":open %sh{cat /tmp/unique-file}"
+        ":cd %sh{cat /tmp/unique-file | xargs dirname}"
+        ":redraw"
+        ":set mouse false"
+        ":set mouse true"
+      ];
     };
     theme = "tokyonight";
   };
