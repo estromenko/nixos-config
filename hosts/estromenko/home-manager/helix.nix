@@ -11,8 +11,6 @@
   ];
   settings = {
     keys.normal = {
-      space.e = "@:cd <C-r>%<C-w><ret>";
-      V = ["extend_line_below" "select_mode"];
       C-y = [
         ":sh rm -f /tmp/unique-file"
         ":insert-output yazi \"%{buffer_name}\" --chooser-file=/tmp/unique-file"
