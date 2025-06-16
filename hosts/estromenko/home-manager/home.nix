@@ -29,11 +29,7 @@
 
   programs.zellij = {
     enable = true;
-    attachExistingSession = true;
-    enableFishIntegration = true;
-    exitShellOnExit = true;
     settings = {
-      pane_frames = false;
       show_startup_tips = false;
     };
   };
@@ -75,20 +71,29 @@
 
   programs.niri.settings = import ./niri.nix {config = config;};
 
-  programs.helix = import ./helix.nix {
-    pkgs = pkgs;
-    inputs = inputs;
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+    package = inputs.helix.packages.${pkgs.system}.default;
+    settings.theme = "tokyonight";
+    extraPackages = with pkgs; [
+      nil
+      nixd
+      cargo
+      rust-analyzer
+      ruff
+      pyright
+      tinymist
+    ];
+    languages.language = [
+      {
+        name = "python";
+        language-servers = ["pyright" "ruff"];
+      }
+    ];
   };
 
-  programs.yazi = {
-    enable = true;
-    settings = {
-      mgr = {
-        show_hidden = true;
-        show_symlink = true;
-      };
-    };
-  };
+  programs.yazi.enable = true;
 
   programs.zoxide.enable = true;
 
