@@ -37,6 +37,19 @@
     }
   ];
 
+  layer-rules = [
+    {
+      matches = [
+        {
+          namespace = "wpaperd";
+        }
+      ];
+      place-within-backdrop = true;
+    }
+  ];
+
+  overview.workspace-shadow.enable = false;
+
   outputs."eDP-1" = {
     scale = 1.0;
     mode = {
@@ -52,6 +65,7 @@
 
   layout = {
     focus-ring.enable = false;
+    background-color = "transparent";
     border = {
       enable = true;
       width = 2;
