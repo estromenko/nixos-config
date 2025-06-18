@@ -2,11 +2,13 @@
   prefer-no-csd = true;
 
   spawn-at-startup = [
+    {command = ["xwayland-satellite" ":12"];}
     {command = ["cosmic-panel"];}
   ];
 
   environment = {
     NIXOS_OZONE_WL = "1";
+    DISPLAY = ":12";
   };
 
   input = {
@@ -86,6 +88,7 @@
       hotkey-overlay.title = "Spawn bottom";
       action.spawn = ["rio" "-e" "btm" "-b"];
     };
+    "Mod+O".action.spawn = "onlyoffice-desktopeditors";
     "Mod+Shift+T".action.spawn = "telegram-desktop";
     "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];

@@ -88,11 +88,13 @@
   programs.niri.enable = true;
   programs.amnezia-vpn.enable = true;
   programs.nix-ld.enable = true;
+  programs.fish.enable = true;
 
   users.users.estromenko = {
     isNormalUser = true;
     description = "estromenko";
     extraGroups = ["networkmanager" "wheel" "docker"];
+    shell = pkgs.fish;
   };
 
   # niri-flake adds it on nixos level,

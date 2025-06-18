@@ -18,8 +18,10 @@
   };
 
   home.packages = with pkgs; [
+    xwayland-satellite
     google-chrome
     telegram-desktop
+    onlyoffice-bin
     cosmic-applets
     cosmic-panel
     bottom
