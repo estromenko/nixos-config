@@ -25,7 +25,10 @@
     cosmic-applets
     cosmic-panel
     bottom
+    nerd-fonts.hack
   ];
+
+  fonts.fontconfig.enable = true;
 
   services.swaync.enable = true;
 
@@ -101,8 +104,26 @@
   programs.rio = {
     enable = true;
     settings = {
+      fonts.regular = {
+        family = "Hack Nerd Font";
+      };
       env-vars = ["TERM=xterm-256color"];
       confirm-before-quit = false;
+    };
+  };
+
+  programs.zed-editor = {
+    enable = true;
+    extensions = ["nix" "python" "dockerfile" "yaml" "toml" "git-firefly"];
+    userSettings = {
+      vim_mode = true;
+      telemetry = {
+        metrics = false;
+      };
+      theme = "One Dark";
+      format_on_save = "off";
+      remove_trailing_whitespace_on_save = false;
+      ensure_final_newline_on_save = false;
     };
   };
 

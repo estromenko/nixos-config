@@ -94,6 +94,7 @@
     "Mod+T".action.spawn = "rio";
     "Mod+B".action.spawn = "google-chrome-stable";
     "Mod+V".action.spawn = "AmneziaVPN";
+    "Mod+Z".action.spawn = "zeditor";
     "Mod+Y" = {
       hotkey-overlay.title = "Spawn yazi";
       action.spawn = ["rio" "-e" "fish" "-c" "yazi"];
@@ -103,7 +104,7 @@
       action.spawn = ["rio" "-e" "btm" "-b"];
     };
     "Mod+O".action.spawn = "onlyoffice-desktopeditors";
-    "Mod+Shift+T".action.spawn = "telegram-desktop";
+    "Mod+Shift+T".action.spawn = "Telegram";
     "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"];
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"];
     "Mod+Q".action = close-window;
