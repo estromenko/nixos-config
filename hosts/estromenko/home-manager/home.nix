@@ -88,6 +88,7 @@
       ruff
       pyright
       tinymist
+      typescript-language-server
     ];
     languages.language = [
       {
