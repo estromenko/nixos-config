@@ -35,6 +35,7 @@
   programs.zellij = {
     enable = true;
     settings = {
+      pane_frames = false;
       show_startup_tips = false;
     };
   };
@@ -87,13 +88,14 @@
       rust-analyzer
       ruff
       pyright
+      ty
       tinymist
       typescript-language-server
     ];
     languages.language = [
       {
         name = "python";
-        language-servers = ["pyright" "ruff"];
+        language-servers = ["pyright" "ruff" "ty"];
       }
     ];
   };

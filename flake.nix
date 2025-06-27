@@ -15,6 +15,7 @@
       url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
@@ -24,7 +25,11 @@
     formatter.${system} = pkgs.alejandra;
     nixosConfigurations.estromenko = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
-      modules = [./hosts/estromenko/configuration.nix ./hosts/estromenko/hardware-configuration.nix];
+      modules = [
+        ./hosts/estromenko/configuration.nix
+        ./hosts/estromenko/hardware-configuration.nix
+        inputs.chaotic.nixosModules.default
+      ];
     };
     homeConfigurations.estromenko = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
