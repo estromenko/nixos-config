@@ -11,10 +11,6 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    helix = {
-      url = "github:helix-editor/helix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
@@ -35,6 +31,7 @@
       inherit pkgs;
       modules = [
         inputs.niri.homeModules.niri
+        inputs.chaotic.homeManagerModules.default
         ./hosts/estromenko/home-manager/home.nix
       ];
       extraSpecialArgs = {inherit inputs;};

@@ -1,7 +1,6 @@
 {
   pkgs,
   config,
-  inputs,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -26,6 +25,7 @@
     cosmic-panel
     bottom
     nerd-fonts.hack
+    comma
   ];
 
   fonts.fontconfig.enable = true;
@@ -74,14 +74,18 @@
     };
   };
 
-  programs.niri.settings = import ./niri.nix {config = config;};
+  programs.niri = {
+    package = pkgs.niri_git;
+    settings = import ./niri.nix {config = config;};
+  };
 
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    package = inputs.helix.packages.${pkgs.system}.default;
+    package = pkgs.helix_git;
     settings.theme = "tokyonight";
     extraPackages = with pkgs; [
+      gcc
       nil
       nixd
       cargo
@@ -104,19 +108,15 @@
 
   programs.zoxide.enable = true;
 
-  programs.rio = {
+  programs.alacritty = {
+    package = pkgs.alacritty-graphics;
     enable = true;
-    settings = {
-      fonts.regular = {
-        family = "Hack Nerd Font";
-      };
-      env-vars = ["TERM=xterm-256color"];
-      confirm-before-quit = false;
-    };
+    theme = "tokyo_night";
   };
 
   programs.zed-editor = {
     enable = true;
+    package = pkgs.zed-editor_git;
     extensions = ["nix" "python" "dockerfile" "yaml" "toml" "git-firefly"];
     userSettings = {
       vim_mode = true;
@@ -127,6 +127,9 @@
       format_on_save = "off";
       remove_trailing_whitespace_on_save = false;
       ensure_final_newline_on_save = false;
+      features = {
+        edit_prediction_provider = "none";
+      };
     };
   };
 

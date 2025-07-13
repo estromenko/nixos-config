@@ -8,6 +8,8 @@
 
   environment = {
     NIXOS_OZONE_WL = "1";
+    XDG_CURRENT_DESKTOP = "gnome";
+    QT_QPA_PLATFORM = "wayland";
     DISPLAY = ":12";
   };
 
@@ -91,17 +93,17 @@
 
   binds = with config.lib.niri.actions; {
     "Mod+Shift+Slash".action = show-hotkey-overlay;
-    "Mod+T".action.spawn = "rio";
+    "Mod+T".action.spawn = "alacritty";
     "Mod+B".action.spawn = "google-chrome-stable";
     "Mod+V".action.spawn = "AmneziaVPN";
     "Mod+Z".action.spawn = "zeditor";
     "Mod+Y" = {
       hotkey-overlay.title = "Spawn yazi";
-      action.spawn = ["rio" "-e" "fish" "-c" "yazi"];
+      action.spawn = ["alacritty" "-e" "fish" "-c" "yazi"];
     };
     "Mod+Shift+B" = {
       hotkey-overlay.title = "Spawn bottom";
-      action.spawn = ["rio" "-e" "btm" "-b"];
+      action.spawn = ["alacritty" "-e" "btm" "-b"];
     };
     "Mod+O".action.spawn = "onlyoffice-desktopeditors";
     "Mod+Shift+T".action.spawn = "Telegram";
