@@ -36,7 +36,12 @@
   services.tlp.enable = true;
 
   networking.hostName = "estromenko";
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-l2tp
+    ];
+  };
 
   time.timeZone = "Europe/Moscow";
 
