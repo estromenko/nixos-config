@@ -58,7 +58,13 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
-  services.displayManager.cosmic-greeter.enable = true;
+  services.greetd = {
+    enable = true;
+    settings.default_session = {
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd niri-session";
+      user = "greeter";
+    };
+  };
 
   # Bluetooth
   hardware.bluetooth.enable = true;
