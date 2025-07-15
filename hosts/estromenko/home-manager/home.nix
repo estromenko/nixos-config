@@ -112,6 +112,7 @@
     package = pkgs.alacritty-graphics;
     enable = true;
     theme = "tokyo_night";
+    settings.env.TERM = "xterm-256color";
   };
 
   programs.zed-editor = {
