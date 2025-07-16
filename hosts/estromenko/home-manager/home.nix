@@ -89,12 +89,15 @@
       nil
       nixd
       cargo
+      gopls
       rust-analyzer
       ruff
       pyright
       ty
       tinymist
       typescript-language-server
+      yaml-language-server
+      ansible-language-server
     ];
     languages.language = [
       {
