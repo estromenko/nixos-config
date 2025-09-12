@@ -26,6 +26,13 @@
     bottom
     nerd-fonts.hack
     comma
+    zrok
+    mprocs
+    k9s
+    kubectl
+    kubernetes-helm
+    kind
+    uv
   ];
 
   fonts.fontconfig.enable = true;
