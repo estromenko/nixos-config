@@ -27,25 +27,23 @@
     nerd-fonts.hack
     comma
     zrok
-    mprocs
     k9s
+    basedpyright
     kubectl
+    kubectl-cnpg
     kubernetes-helm
     kind
+    fluxcd
     uv
+    ruff
+    ty
+    nil
+    nixd
   ];
 
   fonts.fontconfig.enable = true;
 
   services.swaync.enable = true;
-
-  programs.zellij = {
-    enable = true;
-    settings = {
-      pane_frames = false;
-      show_startup_tips = false;
-    };
-  };
 
   programs.git = {
     enable = true;
@@ -93,24 +91,13 @@
     settings.theme = "tokyonight";
     extraPackages = with pkgs; [
       gcc
-      nil
-      nixd
       cargo
       gopls
       rust-analyzer
-      ruff
-      pyright
-      ty
       tinymist
       typescript-language-server
       yaml-language-server
       ansible-language-server
-    ];
-    languages.language = [
-      {
-        name = "python";
-        language-servers = ["pyright" "ruff" "ty"];
-      }
     ];
   };
 
@@ -140,6 +127,25 @@
       ensure_final_newline_on_save = false;
       features = {
         edit_prediction_provider = "none";
+      };
+      languages = {
+        Python = {
+          language_servers = ["ty" "ruff"];
+        };
+      };
+      lsp = {
+        ty = {
+          binary = {
+            path = "${pkgs.ty}/bin/ty";
+            arguments = ["server"];
+          };
+        };
+        ruff = {
+          binary = {
+            path = "${pkgs.ruff}/bin/ruff";
+            arguments = ["server"];
+          };
+        };
       };
     };
   };
