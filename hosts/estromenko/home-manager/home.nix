@@ -28,12 +28,18 @@
     comma
     zrok
     k9s
-    basedpyright
     kubectl
     kubectl-cnpg
     kubernetes-helm
     kind
     fluxcd
+    cilium-cli
+    dig
+    nftables
+    sops
+    age
+    talosctl
+    talhelper
     uv
     ruff
     ty
