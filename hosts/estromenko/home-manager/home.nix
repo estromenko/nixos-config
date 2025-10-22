@@ -45,6 +45,7 @@
     ty
     nil
     nixd
+    v2rayn
   ];
 
   fonts.fontconfig.enable = true;

@@ -95,7 +95,7 @@
     "Mod+Shift+Slash".action = show-hotkey-overlay;
     "Mod+T".action.spawn = "alacritty";
     "Mod+B".action.spawn = "google-chrome-stable";
-    "Mod+V".action.spawn = "AmneziaVPN";
+    "Mod+V".action.spawn = "v2rayN";
     "Mod+Z".action.spawn = "zeditor";
     "Mod+Y" = {
       hotkey-overlay.title = "Spawn yazi";

@@ -35,12 +35,19 @@
   };
   services.tlp.enable = true;
 
-  networking.hostName = "estromenko";
-  networking.networkmanager = {
-    enable = true;
-    plugins = with pkgs; [
-      networkmanager-l2tp
-    ];
+  services.resolved.enable = true;
+
+  networking = {
+    hostName = "estromenko";
+    firewall.enable = true;
+    nameservers = ["8.8.8.8" "1.1.1.1"];
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [
+        networkmanager-l2tp
+      ];
+      dns = "systemd-resolved";
+    };
   };
 
   time.timeZone = "Europe/Moscow";
@@ -100,7 +107,6 @@
     enable = true;
     package = pkgs.niri_git;
   };
-  programs.amnezia-vpn.enable = true;
   programs.nix-ld.enable = true;
   programs.fish.enable = true;
 
@@ -125,8 +131,6 @@
       ./home-manager/home.nix
     ];
   };
-
-  networking.firewall.enable = true;
 
   system.stateVersion = "25.05";
 }
