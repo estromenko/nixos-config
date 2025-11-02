@@ -2,7 +2,6 @@
   prefer-no-csd = true;
 
   spawn-at-startup = [
-    {command = ["xwayland-satellite" ":12"];}
     {command = ["cosmic-panel"];}
   ];
 
@@ -10,7 +9,6 @@
     NIXOS_OZONE_WL = "1";
     XDG_CURRENT_DESKTOP = "gnome";
     QT_QPA_PLATFORM = "wayland";
-    DISPLAY = ":12";
   };
 
   input = {
