@@ -188,8 +188,9 @@
     "Mod+Shift+Equal".action.set-window-height = "+10%";
     "Mod+Space".action.switch-layout = "next";
     "Mod+Shift+Space".action.switch-layout = "prev";
-    "Pause".action = screenshot;
-    "Alt+Pause".action = screenshot-window;
+    # https://github.com/sodiboo/niri-flake/issues/1380#issuecomment-3420863847
+    "Pause".action.screenshot = [];
+    "Alt+Pause".action.screenshot-window = [];
     "Mod+Shift+E".action = quit;
     "Mod+Shift+P".action = power-off-monitors;
   };

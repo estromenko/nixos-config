@@ -20,7 +20,7 @@
     xwayland-satellite
     google-chrome
     telegram-desktop
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     cosmic-applets
     cosmic-panel
     bottom
@@ -54,9 +54,13 @@
 
   programs.git = {
     enable = true;
-    userEmail = "estromenko@mail.ru";
-    userName = "estromenko";
-    extraConfig.init.defaultBranch = "master";
+    settings = {
+      user = {
+        email = "estromenko@mail.ru";
+        name = "estromenko";
+      };
+      init.defaultBranch = "master";
+    };
   };
 
   programs.fish = {
@@ -104,7 +108,6 @@
       tinymist
       typescript-language-server
       yaml-language-server
-      ansible-language-server
     ];
   };
 
