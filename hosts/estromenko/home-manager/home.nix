@@ -40,6 +40,7 @@
     age
     talosctl
     talhelper
+    k0sctl
     uv
     ruff
     ty
