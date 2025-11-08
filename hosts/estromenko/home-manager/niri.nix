@@ -92,6 +92,7 @@
   binds = with config.lib.niri.actions; {
     "Mod+Shift+Slash".action = show-hotkey-overlay;
     "Mod+T".action.spawn = "alacritty";
+    "Mod+S".action.spawn = "steam";
     "Mod+B".action.spawn = "google-chrome-stable";
     "Mod+V".action.spawn = "v2rayN";
     "Mod+Z".action.spawn = "zeditor";
