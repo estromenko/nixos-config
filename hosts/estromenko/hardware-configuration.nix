@@ -16,7 +16,6 @@
   boot.kernelParams = [
     "mitigations=off"
   ];
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot.extraModulePackages = [];
   boot.tmp = {
     cleanOnBoot = true;

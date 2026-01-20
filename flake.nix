@@ -11,7 +11,6 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
@@ -24,14 +23,12 @@
       modules = [
         ./hosts/estromenko/configuration.nix
         ./hosts/estromenko/hardware-configuration.nix
-        inputs.chaotic.nixosModules.default
       ];
     };
     homeConfigurations.estromenko = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
         inputs.niri.homeModules.niri
-        inputs.chaotic.homeManagerModules.default
         ./hosts/estromenko/home-manager/home.nix
       ];
       extraSpecialArgs = {inherit inputs;};

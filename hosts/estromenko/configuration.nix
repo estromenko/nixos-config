@@ -105,10 +105,7 @@
 
   virtualisation.docker.enable = true;
 
-  programs.niri = {
-    enable = true;
-    package = pkgs.niri_git;
-  };
+  programs.niri.enable = true;
   programs.nix-ld.enable = true;
   programs.fish.enable = true;
 
@@ -132,7 +129,6 @@
   home-manager.users.estromenko = {...}: {
     imports = [
       inputs.niri.homeModules.niri
-      inputs.chaotic.homeManagerModules.default
       ./home-manager/home.nix
     ];
   };
