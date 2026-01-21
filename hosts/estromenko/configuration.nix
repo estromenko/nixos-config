@@ -20,8 +20,6 @@
     };
   };
 
-  nixpkgs.overlays = [inputs.niri.overlays.niri];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -119,16 +117,11 @@
     shell = pkgs.fish;
   };
 
-  # niri-flake adds it on nixos level,
-  # but I wish to configure it on home-manager level
-  xdg.portal.enable = false;
-
   home-manager.backupFileExtension = "backup";
 
   home-manager.extraSpecialArgs = {inherit inputs;};
   home-manager.users.estromenko = {...}: {
     imports = [
-      inputs.niri.homeModules.niri
       ./home-manager/home.nix
     ];
   };

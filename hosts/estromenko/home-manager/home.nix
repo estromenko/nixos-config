@@ -91,7 +91,7 @@
     };
   };
 
-  programs.niri.settings = import ./niri.nix {config = config;};
+  home.file.".config/niri/config.kdl".text = builtins.readFile ./niri-config.kdl;
 
   programs.helix = {
     enable = true;

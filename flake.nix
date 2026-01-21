@@ -7,10 +7,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
@@ -28,7 +24,6 @@
     homeConfigurations.estromenko = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        inputs.niri.homeModules.niri
         ./hosts/estromenko/home-manager/home.nix
       ];
       extraSpecialArgs = {inherit inputs;};
