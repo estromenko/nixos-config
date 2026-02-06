@@ -151,7 +151,6 @@ binds {
     Mod+Up { focus-window-or-workspace-up; }
     Mod+V { spawn "v2rayN"; }
     Mod+Y hotkey-overlay-title="Spawn yazi" { spawn "alacritty" "-e" "fish" "-c" "yazi"; }
-    Mod+Z { spawn "zeditor"; }
     Pause { screenshot; }
     XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }

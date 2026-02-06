@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -46,7 +45,19 @@
     ty
     nil
     nixd
-    v2rayn
+    qwen-code
+    gcc
+    cargo
+    gopls
+    rust-analyzer
+    tinymist
+    typescript-language-server
+    yaml-language-server
+    go
+    gopls
+    gofumpt
+    golangci-lint-langserver
+    golangci-lint
   ];
 
   fonts.fontconfig.enable = true;
@@ -97,15 +108,6 @@
     enable = true;
     defaultEditor = true;
     settings.theme = "tokyonight";
-    extraPackages = with pkgs; [
-      gcc
-      cargo
-      gopls
-      rust-analyzer
-      tinymist
-      typescript-language-server
-      yaml-language-server
-    ];
   };
 
   programs.yazi.enable = true;
@@ -117,43 +119,6 @@
     enable = true;
     theme = "tokyo_night";
     settings.env.TERM = "xterm-256color";
-  };
-
-  programs.zed-editor = {
-    enable = true;
-    extensions = ["nix" "python" "dockerfile" "yaml" "toml" "git-firefly"];
-    userSettings = {
-      vim_mode = true;
-      telemetry = {
-        metrics = false;
-      };
-      theme = "One Dark";
-      format_on_save = "off";
-      remove_trailing_whitespace_on_save = false;
-      ensure_final_newline_on_save = false;
-      features = {
-        edit_prediction_provider = "none";
-      };
-      languages = {
-        Python = {
-          language_servers = ["ty" "ruff"];
-        };
-      };
-      lsp = {
-        ty = {
-          binary = {
-            path = "${pkgs.ty}/bin/ty";
-            arguments = ["server"];
-          };
-        };
-        ruff = {
-          binary = {
-            path = "${pkgs.ruff}/bin/ruff";
-            arguments = ["server"];
-          };
-        };
-      };
-    };
   };
 
   xdg.portal = {
