@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -8,6 +9,10 @@
 
   home.username = "estromenko";
   home.homeDirectory = "/home/estromenko";
+
+  imports = [
+    inputs.noctalia.homeModules.default
+  ];
 
   home.pointerCursor = {
     name = "phinger-cursors-dark";
@@ -20,8 +25,6 @@
     google-chrome
     telegram-desktop
     onlyoffice-desktopeditors
-    cosmic-applets
-    cosmic-panel
     bottom
     nerd-fonts.hack
     comma
@@ -46,6 +49,9 @@
     nil
     nixd
     qwen-code
+    python313Packages.python-lsp-server
+    jq
+    nodejs
     gcc
     cargo
     gopls
@@ -61,8 +67,6 @@
   ];
 
   fonts.fontconfig.enable = true;
-
-  services.swaync.enable = true;
 
   programs.git = {
     enable = true;
@@ -101,6 +105,11 @@
       path = ./assets/wallpaper.png;
     };
   };
+  home.file.".cache/noctalia/wallpapers.json" = {
+    text = builtins.toJSON {
+      defaultWallpaper = ./assets/wallpaper.png;
+    };
+  };
 
   home.file.".config/niri/config.kdl".text = builtins.readFile ./niri-config.kdl;
 
@@ -119,6 +128,39 @@
     enable = true;
     theme = "tokyo_night";
     settings.env.TERM = "xterm-256color";
+  };
+
+  programs.noctalia-shell = {
+    enable = true;
+    settings = {
+      bar = {
+        density = "compact";
+        position = "right";
+        showCapsule = false;
+        widgets = {
+          left = [
+            { id = "ControlCenter"; useDistroLogo = true; }
+            { id = "Network"; }
+            { id = "Bluetooth"; }
+          ];
+          center = [
+            { id = "Workspace"; hideUnoccupied = false; labelMode = "none"; }
+          ];
+          right = [
+            { id = "Battery"; alwaysShowPercentage = false; warningThreshold = 30; }
+            { id = "Clock"; formatHorizontal = "HH:mm"; formatVertical = "HH mm"; useMonospacedFont = true; usePrimaryColor = true; }
+          ];
+        };
+      };
+      general = {
+        avatarImage = "/home/estromenko/.face";
+        radiusRatio = 0.2;
+      };
+      location = {
+        monthBeforeDay = true;
+        name = "Local";
+      };
+    };
   };
 
   xdg.portal = {

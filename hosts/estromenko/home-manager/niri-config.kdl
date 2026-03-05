@@ -149,13 +149,12 @@ binds {
     Mod+T { spawn "alacritty"; }
     Mod+U { focus-workspace-down; }
     Mod+Up { focus-window-or-workspace-up; }
-    Mod+V { spawn "v2rayN"; }
     Mod+Y hotkey-overlay-title="Spawn yazi" { spawn "alacritty" "-e" "fish" "-c" "yazi"; }
     Pause { screenshot; }
     XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
 }
-spawn-at-startup "cosmic-panel"
+spawn-at-startup "noctalia-shell"
 window-rule {
     draw-border-with-background false
     geometry-corner-radius 15.000000 15.000000 15.000000 15.000000
@@ -167,3 +166,7 @@ layer-rule {
     place-within-backdrop true
 }
 animations { slowdown 1.200000; }
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}

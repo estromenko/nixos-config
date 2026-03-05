@@ -31,7 +31,7 @@
     enable = true;
     ignoreCpuidCheck = true;
   };
-  services.tlp.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   services.resolved.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
