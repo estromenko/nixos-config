@@ -8,11 +8,6 @@
   ];
 
   nix = {
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
     settings = {
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
@@ -23,14 +18,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  services.earlyoom.enable = true;
-
-  services.gvfs.enable = true;
-
-  services.thermald = {
-    enable = true;
-    ignoreCpuidCheck = true;
-  };
   services.power-profiles-daemon.enable = true;
 
   services.resolved.enable = true;
@@ -92,8 +79,6 @@
   services.xserver.excludePackages = [pkgs.xterm];
   documentation.nixos.enable = false;
   documentation.man.generateCaches = false;
-
-  services.upower.enable = true;
 
   # Fix for L2TP VPN connection
   environment.etc = {

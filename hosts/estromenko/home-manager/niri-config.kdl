@@ -58,6 +58,7 @@ environment {
     "NIXOS_OZONE_WL" "1"
     "QT_QPA_PLATFORM" "wayland"
     "XDG_CURRENT_DESKTOP" "gnome"
+    "QS_ICON_THEME" "Papirus"
 }
 binds {
     Alt+Pause { screenshot-window; }
@@ -70,7 +71,6 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    Mod+B { spawn "google-chrome-stable"; }
     Mod+C { center-column; }
     Mod+Comma { consume-window-into-column; }
     Mod+Ctrl+1 { move-column-to-workspace 1; }
@@ -108,15 +108,12 @@ binds {
     Mod+L { focus-column-right; }
     Mod+Left { focus-column-left; }
     Mod+Minus { set-column-width "-10%"; }
-    Mod+O { spawn "onlyoffice-desktopeditors"; }
     "Mod+Page_Down" { focus-workspace-down; }
     "Mod+Page_Up" { focus-workspace-up; }
     Mod+Period { expel-window-from-column; }
     Mod+Q { close-window; }
     Mod+R { switch-preset-column-width; }
     Mod+Right { focus-column-right; }
-    Mod+S { spawn "steam"; }
-    Mod+Shift+B hotkey-overlay-title="Spawn bottom" { spawn "alacritty" "-e" "btm" "-b"; }
     Mod+Shift+Ctrl+Down { move-column-to-monitor-down; }
     Mod+Shift+Ctrl+H { move-column-to-monitor-left; }
     Mod+Shift+Ctrl+J { move-column-to-monitor-down; }
@@ -142,14 +139,12 @@ binds {
     Mod+Shift+Right { focus-monitor-right; }
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Shift+Space { switch-layout "prev"; }
-    Mod+Shift+T { spawn "Telegram"; }
     Mod+Shift+U { move-workspace-down; }
     Mod+Shift+Up { focus-monitor-up; }
     Mod+Space { switch-layout "next"; }
-    Mod+T { spawn "alacritty"; }
     Mod+U { focus-workspace-down; }
     Mod+Up { focus-window-or-workspace-up; }
-    Mod+Y hotkey-overlay-title="Spawn yazi" { spawn "alacritty" "-e" "fish" "-c" "yazi"; }
+    Mod+E { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Pause { screenshot; }
     XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }

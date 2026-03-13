@@ -21,6 +21,7 @@
   };
 
   home.packages = with pkgs; [
+    papirus-icon-theme
     xwayland-satellite
     google-chrome
     telegram-desktop
@@ -31,24 +32,17 @@
     zrok
     k9s
     kubectl
-    kubectl-cnpg
     kubernetes-helm
     kind
-    fluxcd
-    cilium-cli
     dig
-    nftables
-    sops
-    age
-    talosctl
-    talhelper
-    k0sctl
     uv
     ruff
     ty
     nil
     nixd
     qwen-code
+    opencode
+    obs-studio
     python313Packages.python-lsp-server
     jq
     nodejs
@@ -99,12 +93,6 @@
     silent = true;
   };
 
-  services.wpaperd = {
-    enable = true;
-    settings.any = {
-      path = ./assets/wallpaper.png;
-    };
-  };
   home.file.".cache/noctalia/wallpapers.json" = {
     text = builtins.toJSON {
       defaultWallpaper = ./assets/wallpaper.png;
@@ -119,7 +107,10 @@
     settings.theme = "tokyonight";
   };
 
-  programs.yazi.enable = true;
+  programs.yazi = {
+    enable = true;
+    shellWrapperName = "y";
+  };
 
   programs.zoxide.enable = true;
 
@@ -130,38 +121,7 @@
     settings.env.TERM = "xterm-256color";
   };
 
-  programs.noctalia-shell = {
-    enable = true;
-    settings = {
-      bar = {
-        density = "compact";
-        position = "right";
-        showCapsule = false;
-        widgets = {
-          left = [
-            { id = "ControlCenter"; useDistroLogo = true; }
-            { id = "Network"; }
-            { id = "Bluetooth"; }
-          ];
-          center = [
-            { id = "Workspace"; hideUnoccupied = false; labelMode = "none"; }
-          ];
-          right = [
-            { id = "Battery"; alwaysShowPercentage = false; warningThreshold = 30; }
-            { id = "Clock"; formatHorizontal = "HH:mm"; formatVertical = "HH mm"; useMonospacedFont = true; usePrimaryColor = true; }
-          ];
-        };
-      };
-      general = {
-        avatarImage = "/home/estromenko/.face";
-        radiusRatio = 0.2;
-      };
-      location = {
-        monthBeforeDay = true;
-        name = "Local";
-      };
-    };
-  };
+  programs.noctalia-shell.enable = true;
 
   xdg.portal = {
     enable = true;
