@@ -103,7 +103,7 @@
   home-manager.extraSpecialArgs = {inherit inputs;};
   home-manager.users.estromenko = {...}: {
     imports = [
-      ./home-manager/home.nix
+      ./home.nix
     ];
   };
 

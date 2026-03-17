@@ -33,7 +33,7 @@
     homeConfigurations.estromenko = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        ./hosts/estromenko/home-manager/home.nix
+        ./hosts/estromenko/home.nix
       ];
       extraSpecialArgs = {inherit inputs;};
     };
