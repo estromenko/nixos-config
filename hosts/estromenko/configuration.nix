@@ -31,6 +31,7 @@
       enable = true;
       plugins = with pkgs; [
         networkmanager-l2tp
+        networkmanager-openconnect
       ];
       dns = "systemd-resolved";
     };
