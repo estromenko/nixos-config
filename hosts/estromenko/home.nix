@@ -21,6 +21,19 @@
   };
 
   home.packages = with pkgs; [
+    opentofu
+    consul
+    packer
+    terragrunt
+    helmfile
+    thunderbird
+    zarf
+    grype
+    youki
+    gdu
+    bun
+    zellij
+    agent-browser
     papirus-icon-theme
     xwayland-satellite
     google-chrome
@@ -33,6 +46,8 @@
     k9s
     kubectl
     kubernetes-helm
+    kustomize
+    openssl
     kind
     dig
     uv

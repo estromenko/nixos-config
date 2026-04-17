@@ -19,14 +19,14 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   services.power-profiles-daemon.enable = true;
+  services.earlyoom.enable = true;
 
   services.resolved.enable = true;
-  systemd.services.NetworkManager-wait-online.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = true;
 
   networking = {
     hostName = "estromenko";
     firewall.enable = true;
-    nameservers = ["8.8.8.8" "1.1.1.1"];
     networkmanager = {
       enable = true;
       plugins = with pkgs; [
@@ -86,7 +86,17 @@
     "strongswan.conf".text = "";
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings = {
+      dns = ["1.1.1.1" "8.8.8.8"];
+    };
+  };
+
+  zramSwap = {
+    enable = true;
+    memoryMax = 20 * 1024 * 1024 * 1024;
+  };
 
   programs.niri.enable = true;
   programs.nix-ld.enable = true;
