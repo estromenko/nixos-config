@@ -79,7 +79,7 @@
 
   services.xserver.excludePackages = [pkgs.xterm];
   documentation.nixos.enable = false;
-  documentation.man.generateCaches = false;
+  documentation.man.cache.enable = false;
 
   # Fix for L2TP VPN connection
   environment.etc = {
