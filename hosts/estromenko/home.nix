@@ -65,6 +65,16 @@
     cargo
     gopls
     rust-analyzer
+    tailwindcss_4
+    prek
+    rustfmt
+    rustc
+    clippy
+    oha
+    bacon
+    cargo-tarpaulin
+    tokei
+    openssl
     tinymist
     typescript-language-server
     yaml-language-server
@@ -73,6 +83,7 @@
     gofumpt
     golangci-lint-langserver
     golangci-lint
+    inputs.kimi.packages.${stdenv.hostPlatform.system}.kimi-cli
   ];
 
   fonts.fontconfig.enable = true;
