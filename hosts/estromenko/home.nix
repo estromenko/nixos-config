@@ -22,18 +22,11 @@
 
   home.packages = with pkgs; [
     opentofu
-    consul
-    packer
-    terragrunt
-    helmfile
-    thunderbird
     zarf
     grype
-    youki
     gdu
     bun
     zellij
-    agent-browser
     papirus-icon-theme
     xwayland-satellite
     google-chrome
@@ -41,7 +34,6 @@
     onlyoffice-desktopeditors
     bottom
     nerd-fonts.hack
-    comma
     zrok
     k9s
     kubectl
@@ -55,10 +47,8 @@
     ty
     nil
     nixd
-    qwen-code
     opencode
     obs-studio
-    python313Packages.python-lsp-server
     jq
     nodejs
     gcc
