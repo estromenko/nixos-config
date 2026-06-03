@@ -17,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     kimi = {
-      url = "github:MoonshotAI/kimi-cli";
+      url = "github:MoonshotAI/kimi-code";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

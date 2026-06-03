@@ -36,8 +36,11 @@
     nerd-fonts.hack
     zrok
     k9s
+    sops
     kubectl
     kubernetes-helm
+    kubernetes-helmPlugins.helm-secrets
+    helmfile
     kustomize
     openssl
     kind
@@ -51,6 +54,7 @@
     obs-studio
     jq
     nodejs
+    pnpm
     gcc
     cargo
     gopls
@@ -73,10 +77,12 @@
     gofumpt
     golangci-lint-langserver
     golangci-lint
-    inputs.kimi.packages.${stdenv.hostPlatform.system}.kimi-cli
+    inputs.kimi.packages.${stdenv.hostPlatform.system}.kimi-code
   ];
 
   fonts.fontconfig.enable = true;
+
+  programs.jujutsu.enable = true;
 
   programs.git = {
     enable = true;
