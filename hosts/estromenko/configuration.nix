@@ -19,6 +19,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
   services.earlyoom.enable = true;
 
   services.resolved.enable = true;
