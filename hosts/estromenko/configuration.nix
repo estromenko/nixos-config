@@ -79,6 +79,8 @@
   };
 
   services.xserver.excludePackages = [pkgs.xterm];
+  documentation.enable = false;
+  documentation.man.enable = false;
   documentation.nixos.enable = false;
   documentation.man.cache.enable = false;
 

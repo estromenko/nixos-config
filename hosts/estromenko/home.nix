@@ -10,6 +10,8 @@
   home.username = "estromenko";
   home.homeDirectory = "/home/estromenko";
 
+  manual.manpages.enable = false;
+
   imports = [
     inputs.noctalia.homeModules.default
   ];
