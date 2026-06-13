@@ -145,6 +145,7 @@ binds {
     Mod+U { focus-workspace-down; }
     Mod+Up { focus-window-or-workspace-up; }
     Mod+E { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+T { spawn "alacritty"; }
     Pause { screenshot; }
     XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
