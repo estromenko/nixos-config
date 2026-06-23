@@ -118,12 +118,6 @@
     silent = true;
   };
 
-  home.file.".cache/noctalia/wallpapers.json" = {
-    text = builtins.toJSON {
-      defaultWallpaper = ./assets/wallpaper.png;
-    };
-  };
-
   home.file.".config/niri/config.kdl".text = builtins.readFile ./niri-config.kdl;
 
   programs.helix = {
@@ -146,7 +140,13 @@
     settings.env.TERM = "xterm-256color";
   };
 
-  programs.noctalia-shell.enable = true;
+  programs.noctalia= {
+    enable = true;
+    settings.wallpaper = {
+      enable = true;
+      default.path = ./assets/wallpaper.png;
+    };
+  };
 
   xdg.portal = {
     enable = true;

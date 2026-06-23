@@ -144,13 +144,13 @@ binds {
     Mod+Space { switch-layout "next"; }
     Mod+U { focus-workspace-down; }
     Mod+Up { focus-window-or-workspace-up; }
-    Mod+E { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+E { spawn "noctalia" "msg" "panel-open" "launcher"; }
     Mod+T { spawn "alacritty"; }
     Pause { screenshot; }
     XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
 }
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 window-rule {
     draw-border-with-background false
     geometry-corner-radius 15.000000 15.000000 15.000000 15.000000
@@ -159,6 +159,12 @@ window-rule {
     background-effect {
         blur true
     }
+}
+window-rule {
+    match app-id="dev.noctalia.Noctalia.Settings"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
 }
 layer-rule {
     match namespace="^noctalia-wallpaper*"
