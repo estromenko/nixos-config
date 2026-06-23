@@ -79,7 +79,6 @@
     gofumpt
     golangci-lint-langserver
     golangci-lint
-    inputs.kimi.packages.${stdenv.hostPlatform.system}.kimi-code
     alsa-tools
     werf
   ];

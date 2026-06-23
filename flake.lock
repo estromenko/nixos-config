@@ -20,26 +20,6 @@
         "type": "github"
       }
     },
-    "kimi": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1781190962,
-        "narHash": "sha256-UWoUxZwpYEVTQ3DwTgjAC+0JNSTrMR57pcj9wzycESU=",
-        "owner": "MoonshotAI",
-        "repo": "kimi-code",
-        "rev": "596cadd465f72b94c81d59c5f98adc4c2e1f490a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "MoonshotAI",
-        "repo": "kimi-code",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1779357205,
@@ -104,7 +84,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "kimi": "kimi",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
         "noctalia-qs": "noctalia-qs"
