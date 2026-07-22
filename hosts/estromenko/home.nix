@@ -86,6 +86,7 @@
     golangci-lint
     alsa-tools
     werf
+    inputs.hermes-agent.packages.${stdenv.hostPlatform.system}.default
   ];
 
   fonts.fontconfig.enable = true;
@@ -99,6 +100,7 @@
         email = "estromenko@mail.ru";
         name = "estromenko";
       };
+      core.excludesfile = "~/.gitignore";
       init.defaultBranch = "master";
     };
   };
