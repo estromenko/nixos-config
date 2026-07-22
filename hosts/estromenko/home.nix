@@ -46,6 +46,11 @@
     kustomize
     openssl
     kind
+    func
+    k3d
+    youki
+    pocketbase
+    pack
     dig
     uv
     ruff

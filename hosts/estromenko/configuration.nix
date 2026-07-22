@@ -24,8 +24,15 @@
   services.upower.enable = true;
   services.earlyoom.enable = true;
 
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["estromenko"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
   services.resolved.enable = true;
   systemd.services.NetworkManager-wait-online.enable = true;
+
+  services.pcscd.enable = true;
 
   networking = {
     hostName = "estromenko";
@@ -106,6 +113,8 @@
   programs.niri.enable = true;
   programs.nix-ld.enable = true;
   programs.fish.enable = true;
+  programs.throne.enable = true;
+  programs.throne.tunMode.enable = true;
 
   users.users.estromenko = {
     isNormalUser = true;
