@@ -51,6 +51,11 @@
     youki
     pocketbase
     pack
+    skaffold
+    podman
+    podman-compose
+    just
+    ripgrep
     dig
     uv
     ruff
