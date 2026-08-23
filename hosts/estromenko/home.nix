@@ -2,7 +2,13 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+let
+  rustupForCargoCompletion = pkgs.runCommand "rustup-for-cargo-completion" { } ''
+    mkdir -p "$out/bin"
+    ln -s "${pkgs.rustup}/bin/rustup" "$out/bin/rustup"
+  '';
+in {
   nixpkgs.config.allowUnfree = true;
 
   home.enableNixpkgsReleaseCheck = false;
@@ -69,6 +75,7 @@
     pnpm
     gcc
     cargo
+    rustupForCargoCompletion
     gopls
     rust-analyzer
     tailwindcss_4
