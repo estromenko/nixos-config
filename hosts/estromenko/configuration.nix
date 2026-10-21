@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  config,
   ...
 }: {
   imports = [
@@ -19,6 +20,12 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  security.polkit.enable = true;
+  programs.obs-studio = {
+    enable = true;
+    enableVirtualCamera = true;
+  };
 
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;

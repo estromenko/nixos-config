@@ -70,7 +70,6 @@ in {
     nil
     nixd
     opencode
-    obs-studio
     jq
     nodejs
     pnpm
@@ -99,6 +98,7 @@ in {
     golangci-lint
     alsa-tools
     werf
+    rtk
     inputs.hermes-agent.packages.${stdenv.hostPlatform.system}.default
   ];
 
