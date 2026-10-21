@@ -2,9 +2,8 @@
   pkgs,
   inputs,
   ...
-}:
-let
-  rustupForCargoCompletion = pkgs.runCommand "rustup-for-cargo-completion" { } ''
+}: let
+  rustupForCargoCompletion = pkgs.runCommand "rustup-for-cargo-completion" {} ''
     mkdir -p "$out/bin"
     ln -s "${pkgs.rustup}/bin/rustup" "$out/bin/rustup"
   '';
@@ -160,7 +159,7 @@ in {
     settings.env.TERM = "xterm-256color";
   };
 
-  programs.noctalia= {
+  programs.noctalia = {
     enable = true;
     settings.wallpaper = {
       enable = true;
